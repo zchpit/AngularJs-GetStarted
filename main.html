@@ -1,0 +1,9 @@
+<div>
+  <div> {{error}} </div>
+  
+  <form ng-submit="search(username)" name="searchUser">
+    <input type="search" ng-model="username" placeholder="Username to find" required="" />
+    <input type="submit" value="search" />
+  </form>
+  <div ng-show="user" ng-include="'userdetails.html'"></div>
+</div>
