@@ -2,7 +2,7 @@
 
   var app = angular.module("githubViewer",[]);
 
-  var MainController = function($scope, $http) {
+  var MainController = function($scope, $http, $log) {
     
     var onUserComplete = function(response) {
       $scope.user = response.data;
@@ -13,6 +13,7 @@
 
     $scope.search = function(username)
     {
+        $log.info("searching for " + username);
         $http.get("https://api.github.com/users/" + username)
         .then(onUserComplete, onError);
     };
